@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Share a review of a product purchased through Technocrats." />
+    <title>Product Reviews | Technocrats</title>
+    <script src="/assets/theme.js"></script>
+    <link rel="stylesheet" href="/assets/reviews.css" />
+    <link rel="stylesheet" href="/assets/theme.css" />
+    <script type="module" src="/assets/reviews.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Technocrats home">
+        <span class="brand-mark">T</span>
+        <span>technocrats</span>
+      </a>
+      <a class="back-link" href="/">Back to products <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="review-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Real purchases. Real opinions.</p>
+          <h1>Tell shoppers what the product is <em>actually</em> like.</h1>
+          <p class="hero-intro">Choose an item you purchased, rate your experience, and share details that help the next buyer decide.</p>
+          <div class="trust-note">
+            <span class="trust-icon" aria-hidden="true">✓</span>
+            <p><strong>Purchase-based reviews only.</strong> Every submission requires confirmation that the product was purchased.</p>
+          </div>
+        </div>
+
+        <form class="review-form" id="review-form">
+          <div class="form-heading">
+            <span>01</span>
+            <div>
+              <p class="form-kicker">Your experience</p>
+              <h2>Write a review</h2>
+            </div>
+          </div>
+
+          <label for="product">Product purchased</label>
+          <div class="select-wrap">
+            <select id="product" name="productId" required>
+              <option value="">Select your product</option>
+            </select>
+          </div>
+
+          <label>Your rating</label>
+          <fieldset class="rating-picker" aria-label="Product rating">
+            <legend class="sr-only">Choose a star rating</legend>
+            <input type="radio" id="star-5" name="rating" value="5" required /><label for="star-5" title="5 stars">★</label>
+            <input type="radio" id="star-4" name="rating" value="4" /><label for="star-4" title="4 stars">★</label>
+            <input type="radio" id="star-3" name="rating" value="3" /><label for="star-3" title="3 stars">★</label>
+            <input type="radio" id="star-2" name="rating" value="2" /><label for="star-2" title="2 stars">★</label>
+            <input type="radio" id="star-1" name="rating" value="1" /><label for="star-1" title="1 star">★</label>
+          </fieldset>
+
+          <label for="reviewer-name">Display name</label>
+          <input id="reviewer-name" name="reviewerName" type="text" minlength="2" maxlength="50" placeholder="How your name appears" autocomplete="name" required />
+
+          <label for="review-body">Your review</label>
+          <textarea id="review-body" name="body" minlength="20" maxlength="800" rows="6" placeholder="What stood out? How did it perform? Who would you recommend it to?" required></textarea>
+          <div class="character-count"><span id="character-count">0</span>/800</div>
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <label class="purchase-check">
+            <input type="checkbox" name="confirmedPurchase" required />
+            <span>I confirm that I purchased this product.</span>
+          </label>
+
+          <button class="submit-button" type="submit">
+            <span>Publish review</span>
+            <span aria-hidden="true">→</span>
+          </button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="reviews-section" aria-labelledby="reviews-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Community notes</p>
+            <h2 id="reviews-title">Reviews from buyers</h2>
+          </div>
+          <div class="review-count" id="review-count">Loading reviews…</div>
+        </div>
+        <div class="reviews-grid" id="reviews-grid" aria-live="polite">
+          <article class="review-card skeleton"></article>
+          <article class="review-card skeleton"></article>
+          <article class="review-card skeleton"></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="/"><span class="brand-mark">T</span><span>technocrats</span></a>
+      <p>Independent product finds and purchase-based community reviews.</p>
+    </footer>
+  </body>
+</html>
