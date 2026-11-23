@@ -1,8 +1,0 @@
-img[data-product-image-state="processing"] {
-  opacity: 0.08;
-}
-
-img[data-product-image-state="ready"],
-img[data-product-image-state="unchanged"] {
-  opacity: 1;
-}
