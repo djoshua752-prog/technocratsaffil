@@ -68,6 +68,23 @@
   outline: 3px solid #17121d;
   outline-offset: 4px;
 }
+.reviews-product-link {
+  display: block;
+  margin-top: .75rem;
+  padding: .5rem;
+  border-radius: .5rem;
+  color: #e9d5ff;
+  font-size: .875rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.reviews-product-link:hover { color: #facc15; }
+.reviews-product-link:focus-visible { outline: 2px solid #facc15; }
+html[data-theme="light"] .reviews-product-link { color: #5b21b6; }
+html[data-theme="light"] .reviews-product-link:hover { color: #3b0764; }
+html[data-theme="light"] .reviews-product-link:focus-visible { outline-color: #5b21b6; }
 @media (max-width: 760px) {
   .reviews-home-cta { grid-template-columns: 1fr; align-items: start; gap: 2rem; }
   .reviews-home-button { width: 100%; min-width: 0; }

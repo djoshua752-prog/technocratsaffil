@@ -15,6 +15,7 @@ const dateFormatter = new Intl.DateTimeFormat(undefined, {
 });
 
 function populateProductSelect() {
+  const requestedProduct = new URLSearchParams(window.location.search).get("product");
   const placeholder = document.createElement("option");
   placeholder.value = "";
   placeholder.textContent = "Select your product";
@@ -40,6 +41,7 @@ function populateProductSelect() {
       const option = document.createElement("option");
       option.value = product.id;
       option.textContent = product.name;
+      option.defaultSelected = product.id === requestedProduct;
       optgroup.append(option);
     });
 
